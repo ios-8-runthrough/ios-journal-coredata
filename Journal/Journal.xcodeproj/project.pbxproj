@@ -85,10 +85,10 @@
 		A254BF51230F975F00FC5ADA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A254BF4F230F974600FC5ADA /* EntryRepresentation.swift */,
 				A254BF47230F96CF00FC5ADA /* journal-coredata.xcdatamodeld */,
 				A254BF4B230F970000FC5ADA /* Entry+Convenience.swift */,
 				A254BF4D230F971F00FC5ADA /* CoreDataStack.swift */,
-				A254BF4F230F974600FC5ADA /* EntryRepresentation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
