@@ -79,6 +79,25 @@ class EntryController {
 
 extension EntryController {
     
+    func fetchSingleEntryFromPersistentStore(identifier: String) -> Entry? {
+        var entry: Entry? = nil
+        let moc = CoreDataStack.shared.mainContext
+        let predicate = NSPredicate(format: "identifier ==%@", identifier)
+        
+        let fetchRequest: NSFetchRequest<Entry> = moc.f
+        fetchRequest.predicate = predicate
+        
+        return entry
+    }
+    
+    func update(entry: Entry, entryRepresentation: EntryRepresentation) {
+        entry.title = entryRepresentation.title
+        entry.bodyText = entryRepresentation.bodyText
+        entry.timestamp = entryRepresentation.timestamp
+        entry.identifier = entryRepresentation.identifier
+        entry.mood = entryRepresentation.mood
+    }
+    
     func put(entry: Entry, completion: @escaping ()-> Void = {}) {
         let identifier = entry.identifier ?? UUID()
         
